@@ -4,5 +4,6 @@ services:
     image: "redis"
   node-app:
     build: .
+    restart: unless-stopped
     ports:
       - "4001:8081"
