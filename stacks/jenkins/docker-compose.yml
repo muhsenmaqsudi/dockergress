@@ -1,0 +1,16 @@
+version: "3.1"
+services:
+  jenkins:
+    image: jenkinsci/blueocean
+    # image: jenkins/jenkins:lts
+    user: root
+    ports:
+      - 8081:8080
+      - 50000:50000
+    volumes:
+      - jenkinsdata:/var/jenkins_home
+      # - /var/run/docker.sock:/var/run/docker.sock
+      # - /usr/local/bin/docker:/usr/local/bin/docker
+volumes:
+  jenkinsdata:
+    driver: local
